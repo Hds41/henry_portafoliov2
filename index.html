@@ -1,0 +1,1810 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111110">
+
+  <title>Henry Díaz — Portfólio</title>
+  <meta name="description" content="Conheça o percurso profissional de Henry Díaz, sua experiência, criatividade e novos caminhos.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #111110;
+      --bg-soft: #191918;
+      --text: #f1eee7;
+      --muted: #aaa79f;
+      --accent: #b9a17a;
+      --line: rgba(241, 238, 231, 0.16);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
+    .nav-label {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      min-height: 690px;
+      min-height: min(820px, calc(100svh - 84px));
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(17, 17, 16, 0.98) 0%,
+          rgba(17, 17, 16, 0.88) 40%,
+          rgba(17, 17, 16, 0.38) 100%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(17, 17, 16, 0.65),
+          transparent 45%
+        ),
+        url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=2200&q=85")
+        center / cover no-repeat;
+    }
+
+    .hero-content {
+      width: min(780px, 100%);
+      padding: 100px 0 120px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(54px, 10vw, 112px);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 1.04;
+      margin-bottom: 28px;
+    }
+
+    
+.hero-subtitle {
+  max-width: 540px;
+  color: #d4d0c7;
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: 22px;
+  text-wrap: balance;
+}
+
+
+    .hero-description {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 38px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--accent);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      transition: color 0.25s ease;
+    }
+
+    .text-link:hover {
+      color: var(--accent);
+    }
+
+    .section {
+      padding: 115px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      max-width: 750px;
+      font-family: var(--serif);
+      font-size: clamp(35px, 6vw, 64px);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+
+    .section-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .journey-intro {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 320px;
+    }
+
+    .journey-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .journey-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 20px;
+      padding: 27px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .journey-number {
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding-top: 5px;
+    }
+
+    .journey-item h3 {
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    .journey-item p {
+      max-width: 480px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .closing {
+      background: var(--bg-soft);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .closing h2 {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      font-family: var(--serif);
+      font-size: clamp(36px, 6vw, 68px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .closing p {
+      color: var(--muted);
+      margin: 0 auto 32px;
+      max-width: 500px;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 30px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    footer a {
+      color: var(--text);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 700px) {
+      .topbar {
+        min-height: 70px;
+      }
+
+      .nav-label {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+      }
+
+      .hero {
+        min-height: 690px;
+        min-height: calc(88svh - 70px);
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(17, 17, 16, 0.94),
+            rgba(17, 17, 16, 0.58)
+          ),
+          linear-gradient(
+            0deg,
+            rgba(17, 17, 16, 0.7),
+            transparent
+          ),
+          url("https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1200&q=80")
+          center / cover no-repeat;
+      }
+
+      .hero-content {
+        padding: 90px 0;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .journey-intro {
+        max-width: 480px;
+      }
+
+      .closing {
+        padding: 78px 0;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.language-switch button {
+  padding: 5px 2px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.language-switch button.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.language-switch button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-label {
+    font-size: 11px;
+  }
+}
+
+
+    
+  </style>
+
+
+
+  
+</head>
+
+<body>
+  
+<header class="container topbar">
+  <a class="brand" href="#inicio">HENRY DÍAZ</a>
+
+  <span class="nav-label" data-i18n="navLabel">
+    Portfólio pessoal · 2026
+  </span>
+
+  <nav class="language-switch" aria-label="Idioma">
+    <button type="button" data-lang="pt" class="active"
+      aria-pressed="true">PT</button>
+    <button type="button" data-lang="en"
+      aria-pressed="false">EN</button>
+    <button type="button" data-lang="es"
+      aria-pressed="false">ES</button>
+  </nav>
+</header>
+
+
+  <main>
+    
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content reveal">
+      <p class="eyebrow" data-i18n="heroEyebrow">
+        Experiência · Criatividade · Evolução
+      </p>
+
+      <h1>HENRY<br>DÍAZ</h1>
+
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        Experiência. Criatividade. Novos caminhos.
+      </p>
+
+      <p class="hero-description" data-i18n="heroDescription">
+        Um percurso profissional construído com experiência,
+        curiosidade e vontade de evoluir.
+      </p>
+
+      <a class="text-link" href="#percurso">
+        <span data-i18n="heroButton">CONHEÇA MEU PERCURSO PROFISSIONAL</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="percurso">
+  <div class="container reveal">
+    <p class="section-label" data-i18n="journeyLabel">01 — Percurso</p>
+
+    <h2 class="section-title" data-i18n="journeyTitle">
+      Uma trajetória construída com prática, curiosidade e evolução.
+    </h2>
+
+    <div class="section-copy">
+      <p data-i18n="journeyParagraph1">
+        Minha trajetória profissional foi construída principalmente na
+        gastronomia, por meio de experiências que ampliaram minha visão,
+        meu repertório e minha forma de criar. Minha formação no
+        <strong>Le Cordon Bleu</strong> faz parte desse percurso,
+        contribuindo para minha visão e meu desenvolvimento profissional.
+      </p>
+
+      <p data-i18n="journeyParagraph2">
+        Ao longo dessa trajetória, a curiosidade por novas possibilidades
+        também me aproximou da tecnologia e da inteligência artificial,
+        áreas que hoje exploro por meio de estudos, experimentos e projetos digitais.
+      </p>
+
+      <p data-i18n="journeyParagraph3">
+        Continuo valorizando a experiência adquirida na prática, enquanto
+        desenvolvo novas ideias e descubro outros caminhos para transformar
+        criatividade em projetos.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    
+<section class="section" id="experiencias">
+  <div class="container journey-grid">
+    <div class="reveal">
+      <p class="section-label" data-i18n="experiencesLabel">
+        02 — Experiências
+      </p>
+
+      <h2 class="section-title" data-i18n="experiencesTitle">
+        Diferentes experiências. Uma vontade constante de avançar.
+      </h2>
+
+      <p class="journey-intro" data-i18n="experiencesIntro">
+        Cada experiência fortalece minha trajetória na gastronomia e amplia minha visão criativa, enquanto exploro novas possibilidades por meio da tecnologia e da inteligência artificial.
+      </p>
+    </div>
+
+    <div class="journey-list reveal">
+      <article class="journey-item">
+        <span class="journey-number">01</span>
+        <div>
+          <h3 data-i18n="experienceGastronomy">Gastronomia</h3>
+          <p data-i18n="experienceGastronomyText">
+            Uma trajetória profissional ligada à cozinha,
+            à técnica, à criatividade e ao encontro entre culturas.
+          </p>
+        </div>
+      </article>
+
+      <article class="journey-item">
+        <span class="journey-number">02</span>
+        <div>
+          <h3 data-i18n="experienceCreativity">Criatividade</h3>
+          <p data-i18n="experienceCreativityText">
+            O interesse por novas perspectivas, linguagens
+            e maneiras de desenvolver ideias.
+          </p>
+        </div>
+      </article>
+
+      <article class="journey-item">
+        <span class="journey-number">03</span>
+        <div>
+          <h3 data-i18n="experienceTechnology">Tecnologia e IA</h3>
+          <p data-i18n="experienceTechnologyText">
+            Estudando e experimentando ferramentas de tecnologia e inteligência artificial, com foco em novas ideias e no desenvolvimento de projetos digitais.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+    
+<!-- GALERIA EDITORIAL -->
+<section class="hd-gallery" id="galeria">
+  <div class="hd-gallery-heading">
+    
+    <p data-i18n="galleryLabel">03 — GALERIA</p>
+<h2 data-i18n="galleryTitle">
+  Imagens, ideias e novas perspectivas.
+</h2>
+  </div>
+
+  
+<!-- VISÃO GASTRONÔMICA -->
+<section class="hd-culinary-vision" id="visao-gastronomica">
+
+  <div class="hd-culinary-vision-inner">
+
+    <p class="hd-culinary-eyebrow" data-i18n="culinaryLabel">
+  VISÃO GASTRONÔMICA
+</p>
+
+<h2 data-i18n="culinaryTitle">A arquitetura do sabor</h2>
+
+    <p class="hd-culinary-epigraph" data-i18n="culinaryEpigraph">
+  Na escuridão, não falta luz: a luz torna-se seletiva.
+  Apenas aquilo que merece ser contemplado emerge do vazio.
+    </p>
+
+    <div class="hd-culinary-copy">
+       
+      <p>
+        <p data-i18n="culinaryParagraph1">
+        Minha visão da gastronomia nasce das minhas raízes peruanas,
+        da minha experiência na cozinha e do fascínio pelo encontro
+        entre as culturas peruana e japonesa. Na cozinha Nikkei,
+        encontro um espaço de expressão onde ingredientes, técnicas
+        e tradições de ambas as culturas dialogam e dão origem a
+        novas possibilidades.
+      </p>
+
+      <p>
+        <p data-i18n="culinaryParagraph2">
+        Entendo a alta gastronomia como uma busca constante:
+        explorar sabores, contrastes, texturas e composições sem
+        perder de vista a identidade que dá sentido a cada criação.
+        Interessa-me reinterpretar esse encontro cultural a partir
+        de uma perspectiva contemporânea, combinando respeito pela
+        origem, sensibilidade estética e liberdade criativa.
+      </p>
+
+      <p>
+        <p data-i18n="culinaryParagraph3">
+        A penumbra, a luz seletiva, as superfícies e os contrastes
+        fazem parte da minha linguagem visual. Não são um fim em si
+        mesmos, mas uma forma de direcionar o olhar para o essencial
+        e expressar como imagino a gastronomia: como uma experiência
+        que reúne técnica, identidade, emoção e criatividade.
+      </p>
+
+      <p>
+        <p data-i18n="culinaryParagraph4">
+        Este espaço reúne conceitos gastronômicos e ideias visuais
+        que representam essa busca pessoal, uma exploração dos
+        caminhos que a cozinha peruana Nikkei ainda pode abrir.
+      </p>
+
+    </div>
+
+    <p class="hd-culinary-disclosure" data-i18n="culinaryDisclosure">
+      
+      Conceitos gastronômicos autorais explorados visualmente
+      com inteligência artificial.
+    </p>
+
+  </div>
+
+</section>
+
+<style>
+.hd-culinary-vision {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 90px 24px 85px;
+  background: #111110;
+  color: #f1eee7;
+}
+
+.hd-culinary-vision-inner {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.hd-culinary-eyebrow {
+  margin: 0 0 24px;
+  color: #b9a17a;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.hd-culinary-vision h2 {
+  margin: 0 0 30px;
+  color: #f1eee7;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 5.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.hd-culinary-epigraph {
+  max-width: 680px;
+  margin: 0 0 42px;
+  padding-left: 20px;
+  border-left: 1px solid #b9a17a;
+  color: #c8b99f;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(18px, 2.5vw, 23px);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.hd-culinary-copy {
+  max-width: 740px;
+}
+
+.hd-culinary-copy p {
+  margin: 0 0 22px;
+  color: #c2bfb8;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+}
+
+.hd-culinary-disclosure {
+  max-width: 740px;
+  margin: 34px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(185, 161, 122, 0.3);
+  color: #928b7e;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+  letter-spacing: 0.4px;
+}
+
+@media (max-width: 600px) {
+  .hd-culinary-vision {
+    padding: 65px 22px 60px;
+  }
+
+  .hd-culinary-eyebrow {
+    margin-bottom: 18px;
+    letter-spacing: 2.5px;
+  }
+
+  .hd-culinary-vision h2 {
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+  }
+
+  .hd-culinary-epigraph {
+    margin-bottom: 32px;
+    padding-left: 15px;
+    line-height: 1.65;
+  }
+
+  .hd-culinary-copy p {
+    margin-bottom: 19px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .hd-culinary-disclosure {
+    margin-top: 27px;
+  }
+}
+</style>
+
+
+  
+<div class="hd-gallery-track">
+
+  <div class="hd-gallery-slide"><img src="anticuchos.jpg" alt="Anticuco peruano"></div>
+ <div class="hd-gallery-slide"><img src="ajigallina.jpg" alt="Cocina nikkei"></div>
+<div class="hd-gallery-slide"><img src="lomosaltado.jpg" alt="Nikkei"></div>
+<div class="hd-gallery-slide"><img src="carpacciopul.jpg" alt="Nikkei tiradito"></div>
+<div class="hd-gallery-slide"><img src="biff.jpg" alt="Nikkei "></div>
+
+  
+
+  <div class="hd-gallery-slide"><img src="niguimarmol.jpg" alt="Nikkei"></div>
+ <div class="hd-gallery-slide"><img src="tacocausa.jpg" alt="Cocina nikkei"></div>
+<div class="hd-gallery-slide"><img src="niguirini.jpg" alt="Nikkei"></div>
+<div class="hd-gallery-slide"><img src="carpacciopez.jpg" alt="Nikkei tiradito"></div>
+<div class="hd-gallery-slide"><img src="tiraditoni.jpg" alt="Nikkei tiradito"></div>
+  
+  <div class="hd-gallery-slide"><img src="ceviche.jpg" alt="Ceviche peruano"></div>
+ <div class="hd-gallery-slide"><img src="anticucho.jpg" alt="Cocina nikkei"></div>
+<div class="hd-gallery-slide"><img src="amarillowell.jpg" alt="Nikkei"></div>
+<div class="hd-gallery-slide"><img src="nikkeiceviche.jpg" alt="Nikkei ceviche"></div>
+
+  <div class="hd-gallery-slide"><img src="atun.jpg" alt="Nikkei"></div>
+ <div class="hd-gallery-slide"><img src="pulpo.jpg" alt="Cocina nikkei"></div>
+   <div class="hd-gallery-slide"><img src="suspirolucuma.jpg" alt="Cocina nikkei"></div>
+  
+  
+  <div class="hd-gallery-slide"><img src="nikkei.jpg" alt="Cocina Nikkei"></div>
+</div>
+
+
+  <div class="hd-gallery-controls">
+    <span class="hd-gallery-count">01 / 04</span>
+    <div>
+      <button type="button" class="hd-gallery-prev" aria-label="Imagem anterior">←</button>
+      <button type="button" class="hd-gallery-next" aria-label="Próxima imagem">→</button>
+    </div>
+  </div>
+</section>
+
+<style>
+
+.hd-gallery {
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  color: #f1eee7;
+  overflow: hidden;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+
+.hd-gallery-heading {
+  padding: 0 5% 30px;
+}
+
+.hd-gallery-heading p {
+  color: #b9a17a;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.hd-gallery-heading h2 {
+  max-width: 650px;
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.hd-gallery-window {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hd-gallery-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.7s ease-in-out;
+  touch-action: pan-y;
+}
+
+
+
+
+.hd-gallery-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+.hd-gallery-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  clip-path: none;
+}
+
+
+
+
+
+.hd-gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 5% 0;
+}
+
+.hd-gallery-count {
+  color: #b9a17a;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hd-gallery-controls button {
+  width: 44px;
+  height: 44px;
+  margin-left: 8px;
+  border: 1px solid rgba(185, 161, 122, 0.5);
+  border-radius: 50%;
+  background: transparent;
+  color: #f1eee7;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hd-gallery-controls button:hover {
+  background: #b9a17a;
+  color: #111110;
+}
+
+@media (max-width: 600px) {
+  .hd-gallery {
+    margin: 60px 0;
+  }
+
+  .hd-gallery-slide {
+    padding: 0 0%;
+  }
+
+  .hd-gallery-slide img {
+    height: 280px;
+  }
+}
+
+  footer.container a[data-i18n="footerBack"] {
+  white-space: nowrap;
+  display: inline-block;
+  width: auto;
+  flex-shrink: 0;
+  }
+</style>
+
+<script>
+(function () {
+  const gallery = document.querySelector("#galeria");
+  if (!gallery || gallery.dataset.ready) return;
+  gallery.dataset.ready = "true";
+
+  const track = gallery.querySelector(".hd-gallery-track");
+  const slides = gallery.querySelectorAll(".hd-gallery-slide");
+  const count = gallery.querySelector(".hd-gallery-count");
+  const prev = gallery.querySelector(".hd-gallery-prev");
+  const next = gallery.querySelector(".hd-gallery-next");
+
+  let index = 0;
+  let timer;
+  let touchStart = 0;
+
+  function showSlide(n) {
+    index = (n + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    count.textContent =
+      String(index + 1).padStart(2, "0") +
+      " / " + String(slides.length).padStart(2, "0");
+    startTimer();
+  }
+
+  function startTimer() {
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      showSlide(index + 1);
+    }, 4000);
+  }
+
+  prev.addEventListener("click", function () {
+    showSlide(index - 1);
+  });
+
+  next.addEventListener("click", function () {
+    showSlide(index + 1);
+  });
+
+  track.addEventListener("touchstart", function (e) {
+    touchStart = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  track.addEventListener("touchend", function (e) {
+    const distance = e.changedTouches[0].clientX - touchStart;
+    if (Math.abs(distance) > 45) {
+      showSlide(index + (distance < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+
+  gallery.addEventListener("mouseenter", function () {
+    clearTimeout(timer);
+  });
+
+  gallery.addEventListener("mouseleave", startTimer);
+
+  showSlide(0);
+})();
+</script>
+<!-- FIM DA GALERIA EDITORIAL -->
+
+
+    
+    <section class="closing" id="contato">
+  <div class="container reveal">
+    <p class="section-label" data-i18n="closingLabel">03 — Próximos caminhos</p>
+
+    <h2 data-i18n="closingTitle">
+  Novas ideias começam quando estamos abertos a explorar.
+    </h2>
+
+    <p data-i18n="closingDescription">
+      Conheça meu trabalho e acompanhe os projetos que estou
+      desenvolvendo.
+    </p>
+
+    <a
+      class="text-link"
+      href="https://www.instagram.com/genrids/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span data-i18n="instagramButton">ACOMPANHE MEU TRABALHO</span>
+      <span>↗</span>
+    </a>
+
+    <a
+  class="text-link"
+  href="mailto:genri.diaz.ti@gmail.com"
+>
+  <span data-i18n="emailButton">CONTATO PROFISSIONAL</span>
+  <span>↗</span>
+    </a>
+
+    <button
+      type="button"
+      class="portfolio-button"
+      onclick="abrirPortfolio()"
+    >
+      <span data-i18n="portfolioButton">VER MEU PORTFÓLIO</span>
+      <span>↗</span>
+    </button>
+  </div>
+</section>```
+
+<style>
+.portfolio-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 17px 25px;
+  background: #b9a17a;
+  color: #111110;
+  border: 1px solid #b9a17a;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.portfolio-button span {
+  font-size: 17px;
+}
+
+.portfolio-button:hover {
+  background: transparent;
+  color: #b9a17a;
+}
+</style>
+
+
+      </>
+    </>
+
+
+
+    
+
+
+<style>
+  #portfolio {
+    color: #f1eee7;
+  }
+
+  #portfolio .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  #portfolio .portfolio-card {
+    min-width: 0;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid rgba(185, 161, 122, 0.22);
+    background: #171716;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  #portfolio .portfolio-card:hover {
+    border-color: #b9a17a;
+    transform: translateY(-3px);
+  }
+
+  #portfolio .portfolio-card img {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+
+  #portfolio .portfolio-card:hover img {
+    transform: scale(1.035);
+  }
+
+  #portfolio .portfolio-caption {
+    padding: 16px 14px 18px;
+  }
+
+  #portfolio .portfolio-caption h3 {
+    margin: 0 0 8px;
+    color: #f1eee7;
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  #portfolio .portfolio-caption p {
+    margin: 0;
+    color: #aaa79f;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  #portfolio-reveal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #080808;
+    opacity: 1;
+  }
+
+  #portfolio-reveal.active .reveal-line {
+    animation: lineExpand 0.9s ease-out forwards;
+  }
+
+  #portfolio-reveal.active .reveal-eye {
+    animation: eyeOpen 0.8s ease-out forwards;
+  }
+
+  #portfolio-reveal.closing {
+    animation: revealFade 0.55s ease forwards;
+  }
+
+  
+  .reveal-flash {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 2px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    background: #8bbcff;
+    box-shadow:
+      0 0 12px rgba(70, 145, 255, 0.9),
+      0 0 35px rgba(0, 102, 204, 0.65);
+  }
+
+
+  
+  @keyframes flashExpand {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    70% {
+      width: 100vw;
+      opacity: 0.9;
+    }
+    100% {
+      width: 100vw;
+      opacity: 0;
+    }
+  }
+
+  #portfolio-reveal.active .reveal-flash {
+    animation: flashExpand 1.2s ease-in-out forwards;
+  }
+
+
+  #foto-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    box-sizing: border-box;
+    padding: 65px 18px 24px;
+    background: rgba(5, 5, 5, 0.97);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #f1eee7;
+    touch-action: pan-y;
+  }
+
+  #foto-modal-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 94vw;
+    max-height: 66vh;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  #foto-modal-titulo {
+    margin: 20px 0 7px;
+    font-family: var(--serif);
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #foto-modal-descricao {
+    max-width: 520px;
+    margin: 0;
+    color: #aaa79f;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .foto-control {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(185, 161, 122, 0.7);
+    border-radius: 50%;
+    background: rgba(15, 15, 15, 0.7);
+    color: #f1eee7;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  #foto-fechar {
+    top: 17px;
+    right: 18px;
+    font-size: 27px;
+  }
+
+  #foto-anterior {
+    left: 14px;
+    top: 42%;
+  }
+
+  #foto-seguinte {
+    right: 14px;
+    top: 42%;
+  }
+
+  #foto-contador {
+    margin-top: 14px;
+    color: #b9a17a;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 480px) {
+    #portfolio .portfolio-grid {
+      gap: 12px;
+    }
+
+    #portfolio .portfolio-card img {
+      height: 155px;
+    }
+
+    #portfolio .portfolio-caption {
+      padding: 12px 10px 14px;
+    }
+
+    #portfolio .portfolio-caption h3 {
+      font-size: 16px;
+    }
+
+    #portfolio .portfolio-caption p {
+      font-size: 11px;
+    }
+
+    #foto-anterior {
+      left: 5px;
+    }
+
+    #foto-seguinte {
+      right: 5px;
+    }
+  }
+
+  .brand-signature {
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin: 12px 0;
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+
+.brand-signature strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+</style>
+
+<section id="portfolio" style="display:none; padding:70px 0; background:#111110;">
+  <div class="container">
+    <p class="section-label">04 — PORTFÓLIO</p>
+    <h2 class="section-title">Gastronomia, técnica e criatividade.</h2>
+    <p style="color:#aaa79f; margin-bottom:30px;">
+      Minha trajetória, minhas experiências e meus projetos.
+    </p>
+
+    <div class="portfolio-grid">
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="yosushi.jpg" alt="Preparação de sushi" data-title="Preparação de sushi" data-description="Técnica, precisão e atenção aos detalhes.">
+        <div class="portfolio-caption">
+          <h3>Preparação de sushi</h3>
+          <p>Técnica, precisão e atenção aos detalhes.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="ceviche.jpg" alt="Ceviche peruano" data-title="Ceviche peruano" data-description="Frescor, equilíbrio e identidade da gastronomia peruana.">
+        <div class="portfolio-caption">
+          <h3>Ceviche peruano</h3>
+          <p>Frescor, equilíbrio e identidade peruana.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="tiradito3.jpg" alt="Tiradito" data-title="Tiradito" data-description="Uma expressão da cozinha peruana contemporânea.">
+        <div class="portfolio-caption">
+          <h3>Tiradito</h3>
+          <p>Uma expressão da cozinha peruana contemporânea.</p>
+        </div>
+      </article>
+
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="arrozmariscos.jpg" alt="Arroz com mariscos" data-title="Arroz com mariscos" data-description="Um prato com sabor e tradição peruana, com forte sabor a mar.">
+        <div class="portfolio-caption">
+          <h3>Arroz com mariscos</h3>
+          <p>Um prato com sabor a mar.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="arrozpato.jpg" alt="Arroz com pato" data-title="Arroz com pato" data-description="Um prato de tradição peruana, com personalidade e sabor.">
+        <div class="portfolio-caption">
+          <h3>Arroz com pato</h3>
+          <p>Tradição peruana, personalidade e sabor.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="cala.jpg" alt="Henry no restaurante Cala" data-title="Experiência no restaurante Cala" data-description="Uma experiência profissional no restaurante Cala.">
+        <div class="portfolio-caption">
+          <h3>Restaurante Cala</h3>
+          <p>Uma experiência profissional no restaurante Cala.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="chicharron.jpg" alt="Pan con chicharrón peruano" data-title="Pan con chicharrón" data-description="Um clássico peruano que faz parte da cultura gastronômica do país.">
+        <div class="portfolio-caption">
+          <h3>Pan con chicharrón</h3>
+          <p>Um clássico da cultura gastronômica peruana.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="quinuapul.jpg" alt="Quinoto com polvo" data-title="Quinoto com polvo" data-description="Quinoa cremosa combinada com polvo, em uma composição autoral.">
+        <div class="portfolio-caption">
+          <h3>Quinoto com polvo</h3>
+          <p>Quinoa cremosa e polvo em uma composição autoral.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="causachil.jpg" alt="Causa peruana tradicional" data-title="Causa tradicional" data-description="Uma preparação tradicional da gastronomia peruana.">
+        <div class="portfolio-caption">
+          <h3>Causa tradicional</h3>
+          <p>Uma preparação tradicional da gastronomia peruana.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="cangrejo.jpg" alt="Caranguejo do norte do Peru" data-title="Caranguejo do norte do Peru" data-description="Um ingrediente associado à riqueza gastronômica do litoral norte peruano.">
+        <div class="portfolio-caption">
+          <h3>Caranguejo do norte do Peru</h3>
+          <p>A riqueza gastronômica do litoral norte peruano.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="sashimi (1).jpg" alt="Sashimi" data-title="Sashimi" data-description="Respeito ao ingrediente, precisão no corte e simplicidade.">
+        <div class="portfolio-caption">
+          <h3>Sashimi</h3>
+          <p>Respeito ao ingrediente e precisão no corte.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="micausa.jpg" alt="Causa peruana contemporânea" data-title="Causa contemporânea" data-description="Uma releitura contemporânea de um clássico peruano.">
+        <div class="portfolio-caption">
+          <h3>Causa contemporânea</h3>
+          <p>Uma releitura contemporânea de um clássico peruano.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="yoli.jpg" alt="Henry em atividade no Lido di Mare" data-title="Experiência no Lido di Mare" data-description="Vivência profissional e experiência prática no ambiente de cozinha.">
+        <div class="portfolio-caption">
+          <h3>Experiência profissional</h3>
+          <p>Vivência e experiência prática no ambiente de cozinha.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="cevi.jpg" alt="Ceviche" data-title="Ceviche" data-description="Uma preparação emblemática da gastronomia peruana.">
+        <div class="portfolio-caption">
+          <h3>Ceviche</h3>
+          <p>Uma preparação emblemática da gastronomia peruana.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="yo.jpg" alt="Henry Díaz" data-title="Trajetória e criatividade" data-description="Experiências, prática e criatividade fazem parte do meu percurso.">
+        <div class="portfolio-caption">
+          <h3>Trajetória e criatividade</h3>
+          <p>Experiências, prática e criatividade.</p>
+        </div>
+      </article>
+
+      <article class="portfolio-card" onclick="abrirFoto(this)">
+        <img src="projet (1).jpg" alt="Computador representando projetos digitais" data-title="Tecnologia e projetos digitais" data-description="Estudos, experimentos e projetos com tecnologia e inteligência artificial.">
+        <div class="portfolio-caption">
+          <h3>Tecnologia e projetos digitais</h3>
+          <p>Estudos e experimentos com tecnologia e inteligência artificial.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <button type="button" class="text-link"
+      onclick="fecharPortfolio()"
+      style="background:none; border:0; cursor:pointer; margin-top:35px;">
+      FECHAR PORTFÓLIO ×
+    </button>
+  </div>
+</section>
+
+<div id="foto-modal">
+  <button id="foto-fechar" class="foto-control" type="button" onclick="fecharFoto()" aria-label="Fechar imagem">×</button>
+  <button id="foto-anterior" class="foto-control" type="button" onclick="mudarFoto(-1)" aria-label="Foto anterior">‹</button>
+  <img id="foto-modal-img" src="" alt="">
+  <button id="foto-seguinte" class="foto-control" type="button" onclick="mudarFoto(1)" aria-label="Próxima foto">›</button>
+  <h3 id="foto-modal-titulo"></h3>
+  <p id="foto-modal-descricao"></p>
+  <p id="foto-contador"></p>
+</div>
+
+
+<div id="portfolio-reveal" aria-hidden="true">
+  <div class="reveal-flash"></div>
+</div>
+
+  <div class="reveal-line"></div>
+  <div class="reveal-eye">
+    <div class="reveal-pupil"></div>
+  </div>
+</div>
+
+<script>
+  let fotoAtual = 0;
+  let inicioToqueX = 0;
+
+  /** @param {HTMLElement} card */
+  function abrirFoto(card) {
+    const cards = Array.from(document.querySelectorAll('#portfolio .portfolio-card'));
+    fotoAtual = cards.indexOf(card);
+
+    if (fotoAtual < 0) return;
+
+    mostrarFotoAtual();
+    document.getElementById('foto-modal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function mostrarFotoAtual() {
+    const cards = Array.from(document.querySelectorAll('#portfolio .portfolio-card'));
+    const card = cards[fotoAtual];
+    if (!card) return;
+
+    const imagem = card.querySelector('img');
+    if (!imagem) return;
+
+    document.getElementById('foto-modal-img').src = imagem.src;
+    document.getElementById('foto-modal-img').alt = imagem.alt;
+    document.getElementById('foto-modal-titulo').textContent =
+      imagem.getAttribute('data-title') || '';
+    document.getElementById('foto-modal-descricao').textContent =
+      imagem.getAttribute('data-description') || '';
+    document.getElementById('foto-contador').textContent =
+      String(fotoAtual + 1).padStart(2, '0') + ' / ' +
+      String(cards.length).padStart(2, '0');
+  }
+
+  function mudarFoto(direcao) {
+    const cards = document.querySelectorAll('#portfolio .portfolio-card');
+    if (!cards.length) return;
+
+    fotoAtual = (fotoAtual + direcao + cards.length) % cards.length;
+    mostrarFotoAtual();
+  }
+
+  function fecharFoto() {
+    document.getElementById('foto-modal').style.display = 'none';
+    document.getElementById('foto-modal-img').src = '';
+    document.body.style.overflow = '';
+  }
+
+  
+function abrirPortfolio() {
+  const reveal = document.getElementById('portfolio-reveal');
+  const portfolio = document.getElementById('portfolio');
+
+  reveal.classList.remove('active', 'closing');
+  reveal.style.display = 'flex';
+  void reveal.offsetWidth;
+  reveal.classList.add('active');
+
+  window.setTimeout(function() {
+    portfolio.style.display = 'block';
+    portfolio.scrollIntoView({ behavior: 'auto', block: 'start' });
+
+    reveal.classList.add('closing');
+
+    window.setTimeout(function() {
+      reveal.style.display = 'none';
+      reveal.classList.remove('active', 'closing');
+    }, 180);
+  }, 180);
+}
+
+
+  function fecharPortfolio() {
+    fecharFoto();
+
+    const portfolio = document.getElementById('portfolio');
+    portfolio.style.display = 'none';
+
+    const contato = document.getElementById('contato');
+    if (contato) {
+      contato.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  const modalFotos = document.getElementById('foto-modal');
+
+  modalFotos.addEventListener('click', function(event) {
+    if (event.target === modalFotos) fecharFoto();
+  });
+
+  modalFotos.addEventListener('touchstart', function(event) {
+    if (event.changedTouches.length) {
+      inicioToqueX = event.changedTouches[0].screenX;
+    }
+  }, { passive: true });
+
+  modalFotos.addEventListener('touchend', function(event) {
+    if (!event.changedTouches.length) return;
+
+    const finalToqueX = event.changedTouches[0].screenX;
+    const distancia = finalToqueX - inicioToqueX;
+
+    if (Math.abs(distancia) > 50) {
+      mudarFoto(distancia < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  document.addEventListener('keydown', function(event) {
+    const modal = document.getElementById('foto-modal');
+
+    if (modal.style.display !== 'flex') return;
+
+    if (event.key === 'Escape') fecharFoto();
+    if (event.key === 'ArrowRight') mudarFoto(1);
+    if (event.key === 'ArrowLeft') mudarFoto(-1);
+  });
+</script>
+
+
+
+
+    
+  </main>
+
+
+
+  <footer class="container">
+  <a href="#inicio" data-i18n="footerBack">
+    VOLTAR AO INÍCIO ↑
+  </a>
+
+  <span class="brand-signature">
+    A digital experience by <strong>Henry Díaz</strong>
+  </span>
+</footer>
+
+  <script>
+    const elements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      elements.forEach((element) => observer.observe(element));
+    } else {
+      elements.forEach((element) => {
+        element.classList.add("visible");
+      });
+    }
+  </script>
+
+ 
+<script>
+(function () {
+
+const translations = {
+  pt: {
+    navLabel: "Portfólio pessoal · 2026",
+    heroEyebrow: "Experiência · Criatividade · Evolução",
+    heroSubtitle: "Experiência. Criatividade. Novos caminhos.",
+    heroDescription: "Um percurso profissional construído com experiência, curiosidade e vontade de evoluir.",
+    heroButton: "CONHEÇA MEU PERCURSO PROFISSIONAL",
+    journeyLabel: "01 — Percurso",
+    journeyTitle: "Uma trajetória construída com prática, curiosidade e evolução.",
+    journeyParagraph1: "Minha trajetória profissional foi construída principalmente na gastronomia, por meio de experiências que ampliaram minha visão, meu repertório e minha forma de criar. Minha formação no Le Cordon Bleu faz parte desse percurso, contribuindo para minha visão e meu desenvolvimento profissional.",
+    journeyParagraph2: "Ao longo dessa trajetória, a curiosidade por novas possibilidades também me aproximou da tecnologia e da inteligência artificial, áreas que hoje exploro por meio de estudos, experimentos e projetos digitais.",
+    journeyParagraph3: "Continuo valorizando a experiência adquirida na prática, enquanto desenvolvo novas ideias e descubro outros caminhos para transformar criatividade em projetos.",
+    
+experiencesLabel: "02 — Experiências",
+experiencesTitle: "Diferentes experiências. Uma vontade constante de avançar.",
+experiencesIntro: "Cada experiência fortalece minha trajetória na gastronomia e amplia minha visão criativa, enquanto exploro novas possibilidades por meio da tecnologia e da inteligência artificial.",
+experienceGastronomy: "Gastronomia",
+experienceGastronomyText: "Uma trajetória profissional ligada à cozinha, à técnica, à criatividade e ao encontro entre culturas.",
+experienceCreativity: "Criatividade",
+experienceCreativityText: "O interesse por novas perspectivas, linguagens e maneiras de desenvolver ideias.",
+experienceTechnology: "Tecnologia e IA",
+experienceTechnologyText: "Estudando e experimentando ferramentas de tecnologia e inteligência artificial, com foco em novas ideias e no desenvolvimento de projetos digitais.",
+    galleryLabel: "03 — GALERIA",
+galleryTitle: "Imagens, ideias e novas perspectivas.",
+culinaryLabel: "VISÃO GASTRONÔMICA",
+culinaryTitle: "A arquitetura do sabor",
+culinaryEpigraph: "Na escuridão, não falta luz: a luz torna-se seletiva. Apenas aquilo que merece ser contemplado emerge do vazio.",
+culinaryParagraph1: "Minha visão da gastronomia nasce das minhas raízes peruanas, da minha experiência na cozinha e do fascínio pelo encontro entre as culturas peruana e japonesa. Na cozinha Nikkei, encontro um espaço de expressão onde ingredientes, técnicas e tradições de ambas as culturas dialogam e dão origem a novas possibilidades.",
+culinaryParagraph2: "Entendo a alta gastronomia como uma busca constante: explorar sabores, contrastes, texturas e composições sem perder de vista a identidade que dá sentido a cada criação. Interessa-me reinterpretar esse encontro cultural a partir de uma perspectiva contemporânea, combinando respeito pela origem, sensibilidade estética e liberdade criativa.",
+culinaryParagraph3: "A penumbra, a luz seletiva, as superfícies e os contrastes fazem parte da minha linguagem visual. Não são um fim em si mesmos, mas uma forma de direcionar o olhar para o essencial e expressar como imagino a gastronomia: como uma experiência que reúne técnica, identidade, emoção e criatividade.",
+culinaryParagraph4: "Este espaço reúne conceitos gastronômicos e ideias visuais que representam essa busca pessoal, uma exploração dos caminhos que a cozinha peruana Nikkei ainda pode abrir.",
+culinaryDisclosure: "Conceitos gastronômicos autorais explorados visualmente com inteligência artificial.",
+culinaryDisclosure: "Conceitos gastronômicos autorais explorados visualmente com inteligência artificial.",
+    closingLabel: "03 — Próximos caminhos",
+closingTitle: "Novas ideias começam quando estamos abertos a explorar.",
+closingDescription: "Conheça meu trabalho e acompanhe os projetos que estou desenvolvendo.",
+instagramButton: "ACOMPANHE MEU TRABALHO",
+portfolioButton: "VER MEU PORTFÓLIO",
+footerBack: "VOLTAR AO INÍCIO ↑",
+emailButton: "CONTATO PROFISSIONAL",
+  },
+
+  en: {
+    navLabel: "Personal portfolio · 2026",
+    heroEyebrow: "Experience · Creativity · Evolution",
+    heroSubtitle: "Experience. Creativity. New directions.",
+    heroDescription: "A professional journey shaped by experience, curiosity, and the desire to evolve.",
+    heroButton: "EXPLORE MY PROFESSIONAL JOURNEY",
+    journeyLabel: "01 — Journey",
+    journeyTitle: "A journey shaped by practice, curiosity, and evolution.",
+    journeyParagraph1: "My professional journey has been built primarily in gastronomy, through experiences that broadened my perspective, expanded my repertoire, and shaped my creative approach. My education at Le Cordon Bleu is part of this journey, contributing to my perspective and professional development.",
+    journeyParagraph2: "Throughout this journey, my curiosity about new possibilities has also drawn me toward technology and artificial intelligence, which I now explore through study, experimentation, and digital projects.",
+    journeyParagraph3: "I continue to value the experience gained through hands-on practice while developing new ideas and discovering other ways to turn creativity into projects.",
+    
+    experiencesLabel: "02 — Experiences",
+    experiencesTitle: "Different experiences. A constant desire to move forward.",
+    experiencesIntro: "Each experience strengthens my professional journey in gastronomy and broadens my creative perspective, as I explore new possibilities through technology and artificial intelligence.",
+    experienceGastronomy: "Gastronomy",
+    experienceGastronomyText: "A professional journey shaped by cooking, technique, creativity, and the meeting of cultures.",
+    experienceCreativity: "Creativity",
+    experienceCreativityText: "An interest in new perspectives, forms of expression, and ways to develop ideas.",
+    experienceTechnology: "Technology and AI",
+    experienceTechnologyText: "Studying and experimenting with technology and artificial intelligence tools, with a focus on new ideas and digital projects.",
+    galleryLabel: "03 — GALLERY",
+galleryTitle: "Images, ideas, and new perspectives.",
+culinaryLabel: "CULINARY VISION",
+culinaryTitle: "The Architecture of Flavor",
+culinaryEpigraph: "In darkness, light is not absent; it becomes selective. Only what deserves to be contemplated emerges from the void.",
+culinaryParagraph1: "My vision of gastronomy is rooted in my Peruvian heritage, my experience in the kitchen, and my fascination with the meeting of Peruvian and Japanese cultures. In Nikkei cuisine, I find a space for expression where ingredients, techniques, and traditions from both cultures interact and give rise to new possibilities.",
+culinaryParagraph2: "I see fine dining as a constant pursuit: exploring flavors, contrasts, textures, and compositions without losing sight of the identity that gives each creation meaning. I am interested in reinterpreting this cultural encounter through a contemporary perspective, combining respect for origins, aesthetic sensitivity, and creative freedom.",
+culinaryParagraph3: "Dimness, selective light, surfaces, and contrasts are part of my visual language. They are not ends in themselves, but ways of directing attention toward what matters and expressing how I imagine gastronomy: as an experience that brings together technique, identity, emotion, and creativity.",
+culinaryParagraph4: "This space brings together original culinary concepts and visual ideas that represent this personal exploration of the possibilities still to be discovered in Peruvian Nikkei cuisine.",
+culinaryDisclosure: "Original culinary concepts explored visually with artificial intelligence.",
+    culinaryDisclosure: "Original culinary concepts explored visually with artificial intelligence.",
+closingLabel: "03 — Next Steps",
+closingTitle: "New ideas begin when we remain open to exploration.",
+closingDescription: "Discover my work and follow the projects I am developing.",
+instagramButton: "FOLLOW MY WORK",
+portfolioButton: "VIEW MY PORTFOLIO",
+footerBack: "BACK TO TOP ↑",
+emailButton: "PROFESSIONAL CONTACT",
+  },
+
+  es: {
+    navLabel: "Portafolio personal · 2026",
+    heroEyebrow: "Experiencia · Creatividad · Evolución",
+    heroSubtitle: "Experiencia. Creatividad. Nuevos caminos.",
+    heroDescription: "Un recorrido profesional construido con experiencia, curiosidad y ganas de evolucionar.",
+    heroButton: "CONOCE MI RECORRIDO PROFESIONAL",
+    journeyLabel: "01 — Recorrido",
+    journeyTitle: "Un recorrido construido con práctica, curiosidad y evolución.",
+    journeyParagraph1: "Mi recorrido profesional se ha construido principalmente en la gastronomía, a través de experiencias que ampliaron mi visión, mi repertorio y mi forma de crear. Mi formación en Le Cordon Bleu forma parte de este recorrido y contribuye a mi visión y desarrollo profesional.",
+    journeyParagraph2: "A lo largo de este recorrido, la curiosidad por nuevas posibilidades también me acercó a la tecnología y a la inteligencia artificial, áreas que hoy exploro mediante estudios, experimentos y proyectos digitales.",
+    journeyParagraph3: "Sigo valorando la experiencia adquirida en la práctica mientras desarrollo nuevas ideas y descubro otros caminos para transformar la creatividad en proyectos.",
+    
+experiencesLabel: "02 — Experiencias",
+experiencesTitle: "Experiencias diferentes. Una voluntad constante de avanzar.",
+experiencesIntro: "Cada experiencia fortalece mi recorrido profesional en la gastronomía y amplía mi visión creativa, mientras exploro nuevas posibilidades mediante la tecnología y la inteligencia artificial.",
+experienceGastronomy: "Gastronomía",
+experienceGastronomyText: "Un recorrido profesional vinculado a la cocina, la técnica, la creatividad y el encuentro entre culturas.",
+experienceCreativity: "Creatividad",
+experienceCreativityText: "El interés por nuevas perspectivas, lenguajes y maneras de desarrollar ideas.",
+experienceTechnology: "Tecnología e IA",
+experienceTechnologyText: "Estudio y experimentación con herramientas de tecnología e inteligencia artificial, con atención a nuevas ideas y al desarrollo de proyectos digitales.",
+    galleryLabel: "03 — GALERÍA",
+galleryTitle: "Imágenes, ideas y nuevas perspectivas.",
+culinaryLabel: "VISIÓN GASTRONÓMICA",
+culinaryTitle: "La arquitectura del sabor",
+culinaryEpigraph: "En la oscuridad no falta luz: la luz se vuelve selectiva. Solo aquello que merece ser contemplado emerge del vacío.",
+culinaryParagraph1: "Mi visión de la gastronomía nace de mis raíces peruanas, de mi experiencia en la cocina y de la fascinación por el encuentro entre las culturas peruana y japonesa. En la cocina Nikkei encuentro un espacio de expresión donde los ingredientes, las técnicas y las tradiciones de ambas culturas dialogan y dan origen a nuevas posibilidades.",
+culinaryParagraph2: "Entiendo la alta gastronomía como una búsqueda constante: explorar sabores, contrastes, texturas y composiciones sin perder de vista la identidad que da sentido a cada creación. Me interesa reinterpretar este encuentro cultural desde una perspectiva contemporánea, combinando respeto por el origen, sensibilidad estética y libertad creativa.",
+culinaryParagraph3: "La penumbra, la luz selectiva, las superficies y los contrastes forman parte de mi lenguaje visual. No son un fin en sí mismos, sino una forma de dirigir la mirada hacia lo esencial y expresar cómo imagino la gastronomía: como una experiencia que reúne técnica, identidad, emoción y creatividad.",
+culinaryParagraph4: "Este espacio reúne conceptos gastronómicos e ideas visuales que representan esta búsqueda personal y una exploración de los caminos que la cocina peruana Nikkei aún puede abrir.",
+culinaryDisclosure: "Conceptos gastronómicos propios explorados visualmente con inteligencia artificial.",
+culinaryDisclosure: "Conceptos gastronómicos propios explorados visualmente con inteligencia artificial.",
+closingLabel: "03 — Próximos pasos",
+closingTitle: "Las nuevas ideas comienzan cuando estamos abiertos a explorar.",
+closingDescription: "Conoce mi trabajo y sigue los proyectos que estoy desarrollando.",
+instagramButton: "SIGUE MI TRABAJO",
+portfolioButton: "VER MI PORTAFOLIO",
+footerBack: "VOLVER AL INICIO ↑",
+emailButton: "CONTACTO PROFESIONAL",
+  }
+};
+
+
+  const buttons = document.querySelectorAll(".language-switch button");
+
+  function setLanguage(lang) {
+    if (!translations[lang]) return;
+
+    document.documentElement.lang = {
+      pt: "pt-BR",
+      en: "en",
+      es: "es"
+    }[lang];
+
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      const key = element.getAttribute("data-i18n");
+      const value = translations[lang][key];
+
+      if (typeof value === "string") {
+        if (key === "journeyParagraph1") {
+  const strong = document.createElement("strong");
+  strong.textContent = "Le Cordon Bleu";
+
+  element.replaceChildren(
+    document.createTextNode(value.split("Le Cordon Bleu")[0]),
+    strong,
+    document.createTextNode(
+      value.split("Le Cordon Bleu").slice(1).join("Le Cordon Bleu")
+    )
+  );
+} else {
+  element.textContent = value;
+        }
+      }
+    });
+
+    buttons.forEach(function (button) {
+      const active = button.getAttribute("data-lang") === lang;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      setLanguage(button.getAttribute("data-lang"));
+    });
+  });
+
+  setLanguage("pt");
+})();
+</script>
+
+
+  
+</body>
+</html>
