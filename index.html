@@ -394,16 +394,47 @@
   outline-offset: 4px;
 }
 
+
 @media (max-width: 480px) {
   .topbar {
+    display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .topbar > * {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .nav-label {
     font-size: 11px;
   }
+
+  .language-switch {
+    gap: 6px;
+  }
+
+  .language-switch button {
+    font-size: 11px;
+    padding: 5px 1px;
+  }
+
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }
+
 
 
     
