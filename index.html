@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+< lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -445,7 +445,7 @@
   
 </head>
 
-<body>
+<>
   
 <header class="container topbar">
   <a class="brand" href="#inicio">HENRY DÍAZ</a>
@@ -965,6 +965,210 @@
   width: auto;
   flex-shrink: 0;
   }
+
+  
+/* ========================================
+   MODAL — SOLICITAÇÃO DE ORÇAMENTO
+======================================== */
+
+.budget-open {
+  margin-top: 22px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+#budget-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#budget-modal.is-open {
+  display: flex;
+  animation: budgetFadeIn 0.3s ease both;
+}
+
+.budget-panel {
+  position: relative;
+  width: min(100%, 570px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 38px;
+  border: 1px solid rgba(185, 161, 122, 0.35);
+  background: #111110;
+  color: #f1eee7;
+  box-shadow: 0 25px 100px rgba(0, 0, 0, 0.45);
+  animation: budgetRise 0.4s ease both;
+}
+
+.budget-close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.budget-eyebrow {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.budget-panel h2 {
+  margin: 0 35px 12px 0;
+  font-family: var(--serif);
+  font-size: clamp(30px, 5vw, 43px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.budget-intro {
+  margin-bottom: 26px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.budget-form {
+  display: grid;
+  gap: 17px;
+}
+
+.budget-field {
+  display: grid;
+  gap: 7px;
+}
+
+.budget-field label {
+  color: #d4d0c7;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+}
+
+.budget-field input,
+.budget-field select,
+.budget-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid rgba(241, 238, 231, 0.18);
+  border-radius: 0;
+  outline: none;
+  background: #191918;
+  color: #f1eee7;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+
+.budget-field input:focus,
+.budget-field select:focus,
+.budget-field textarea:focus {
+  border-color: var(--accent);
+}
+
+.budget-field select {
+  color-scheme: dark;
+}
+
+.budget-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.budget-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 16px 18px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #111110;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.budget-submit:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.budget-privacy {
+  color: #928f87;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.budget-status {
+  display: none;
+  padding: 13px;
+  border: 1px solid rgba(185, 161, 122, 0.4);
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.budget-status.is-visible {
+  display: block;
+}
+
+@keyframes budgetFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes budgetRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  #budget-modal {
+    padding: 12px;
+  }
+
+  .budget-panel {
+    max-height: 94vh;
+    padding: 30px 20px 24px;
+  }
+
+  .budget-panel h2 {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #budget-modal.is-open,
+  .budget-panel {
+    animation: none;
+  }
+}
+
+
+  
 </style>
 
 <script>
@@ -1062,6 +1266,19 @@
   <span>↗</span>
     </a>
 
+
+    
+<button
+  type="button"
+  class="text-link budget-open"
+  onclick="abrirOrcamento()"
+  data-budget-i18n="openButton"
+>
+  <span>SOLICITAR UM ORÇAMENTO</span>
+  <span>↗</span>
+</button>
+
+
     <button
       type="button"
       class="portfolio-button"
@@ -1102,8 +1319,8 @@
 </style>
 
 
-      </>
-    </>
+      </main>
+
 
 
 
@@ -1525,7 +1742,7 @@
   <div class="reveal-eye">
     <div class="reveal-pupil"></div>
   </div>
-</div>
+
 
 <script>
   let fotoAtual = 0;
@@ -1651,6 +1868,8 @@ function abrirPortfolio() {
 
     
   </main>
+
+  
 
 
 
@@ -1866,9 +2085,436 @@ emailButton: "CONTACTO PROFESIONAL",
 
   setLanguage("pt");
 })();
-</script>
+
+
 
 
   
+</script>
+
+
+<!-- MODAL DE SOLICITUD DE PRESUPUESTO -->
+<div
+  id="budget-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="budget-title"
+  aria-hidden="true"
+>
+  <div class="budget-panel">
+    <button
+      type="button"
+      class="budget-close"
+      onclick="fecharOrcamento()"
+      aria-label="Fechar"
+      data-budget-i18n="closeLabel"
+    >×</button>
+
+    <p class="budget-eyebrow" data-budget-i18n="eyebrow">
+      NOVOS PROJETOS
+    </p>
+
+    <h2 id="budget-title" data-budget-i18n="title">
+      Vamos criar algo único.
+    </h2>
+
+    <p class="budget-intro" data-budget-i18n="intro">
+      Conte-me sobre o seu projeto. Quero entender suas necessidades
+      para explorar a melhor solução digital para você.
+    </p>
+
+    <form id="budget-form" class="budget-form">
+      <div class="budget-field">
+        <label for="budget-name" data-budget-i18n="nameLabel">
+          Seu nome
+        </label>
+        <input
+          id="budget-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required
+          maxlength="100"
+          placeholder="Nome e sobrenome"
+          data-budget-placeholder="namePlaceholder"
+        >
+      </div>
+
+      <div class="budget-field">
+        <label for="budget-email" data-budget-i18n="emailLabel">
+          Seu e-mail
+        </label>
+        <input
+          id="budget-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          maxlength="150"
+          placeholder="voce@exemplo.com"
+        >
+      </div>
+
+      <div class="budget-field">
+        <label for="budget-contact" data-budget-i18n="contactLabel">
+          WhatsApp (opcional)
+        </label>
+        <input
+          id="budget-contact"
+          name="contact"
+          type="tel"
+          autocomplete="tel"
+          maxlength="40"
+          placeholder="+55..."
+        >
+      </div>
+
+      <div class="budget-field">
+        <label for="budget-type" data-budget-i18n="typeLabel">
+          Que tipo de projeto procura?
+        </label>
+        <select id="budget-type" name="project" required>
+          <option value="" data-budget-i18n="chooseOption">
+            Selecione uma opção
+          </option>
+          <option value="Site institucional" data-budget-i18n="typeSite">
+            Site institucional
+          </option>
+          <option value="Portfólio profissional" data-budget-i18n="typePortfolio">
+            Portfólio profissional
+          </option>
+          <option value="Landing page" data-budget-i18n="typeLanding">
+            Landing page
+          </option>
+          <option value="Site com IA ou automações" data-budget-i18n="typeAI">
+            Site com IA ou automações
+          </option>
+          <option value="Outro projeto" data-budget-i18n="typeOther">
+            Outro projeto
+          </option>
+        </select>
+      </div>
+
+      <div class="budget-field">
+        <label for="budget-goal" data-budget-i18n="goalLabel">
+          Qual é o principal objetivo?
+        </label>
+        <select id="budget-goal" name="goal" required>
+          <option value="" data-budget-i18n="chooseOption">
+            Selecione uma opção
+          </option>
+          <option value="Apresentar meu negócio" data-budget-i18n="goalBusiness">
+            Apresentar meu negócio
+          </option>
+          <option value="Atrair clientes" data-budget-i18n="goalClients">
+            Atrair clientes
+          </option>
+          <option value="Exibir meus trabalhos" data-budget-i18n="goalPortfolio">
+            Exibir meus trabalhos
+          </option>
+          <option value="Automatizar processos" data-budget-i18n="goalAutomation">
+            Automatizar processos
+          </option>
+        </select>
+      </div>
+
+      <div class="budget-field">
+        <label for="budget-range" data-budget-i18n="rangeLabel">
+          Faixa de investimento (opcional)
+        </label>
+        <select id="budget-range" name="investment">
+          <option value="" data-budget-i18n="rangeUndecided">
+            Ainda não definido
+          </option>
+          <option value="Até R$ 1.500">Até R$ 1.500</option>
+          <option value="R$ 1.500 a R$ 3.000">R$ 1.500 a R$ 3.000</option>
+          <option value="Acima de R$ 3.000">Acima de R$ 3.000</option>
+        </select>
+      </div>
+
+      <div class="budget-field">
+        <label for="budget-message" data-budget-i18n="messageLabel">
+          Conte um pouco mais sobre sua ideia (opcional)
+        </label>
+        <textarea
+          id="budget-message"
+          name="message"
+          maxlength="2000"
+          data-budget-placeholder="messagePlaceholder"
+          placeholder="O que você gostaria de criar?"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="budget-submit">
+        <span data-budget-i18n="submitButton">
+          ENVIAR SOLICITAÇÃO
+        </span>
+        <span>↗</span>
+      </button>
+
+      <p class="budget-privacy" data-budget-i18n="privacy">
+        Seus dados serão usados para responder à sua solicitação.
+      </p>
+
+      <div
+        id="budget-status"
+        class="budget-status"
+        role="status"
+        aria-live="polite"
+      ></div>
+    </form>
+  </div>
+</div>
+<!-- FIM DO MODAL -->
+
+
+ <script>
+(function () {
+  const modal = document.getElementById("budget-modal");
+  const form = document.getElementById("budget-form");
+  const status = document.getElementById("budget-status");
+
+  if (!modal || !form || !status) return;
+
+  const copy = {
+    pt: {
+      openButton: "SOLICITAR UM ORÇAMENTO",
+      closeLabel: "Fechar",
+      eyebrow: "NOVOS PROJETOS",
+      title: "Vamos criar algo único.",
+      intro: "Conte-me sobre o seu projeto. Quero entender suas necessidades para explorar a melhor solução digital para você.",
+      nameLabel: "Seu nome",
+      namePlaceholder: "Nome e sobrenome",
+      emailLabel: "Seu e-mail",
+      contactLabel: "WhatsApp (opcional)",
+      typeLabel: "Que tipo de projeto procura?",
+      chooseOption: "Selecione uma opção",
+      typeSite: "Site institucional",
+      typePortfolio: "Portfólio profissional",
+      typeLanding: "Landing page",
+      typeAI: "Site com IA ou automações",
+      typeOther: "Outro projeto",
+      goalLabel: "Qual é o principal objetivo?",
+      goalBusiness: "Apresentar meu negócio",
+      goalClients: "Atrair clientes",
+      goalPortfolio: "Exibir meus trabalhos",
+      goalAutomation: "Automatizar processos",
+      rangeLabel: "Faixa de investimento (opcional)",
+      rangeUndecided: "Ainda não definido",
+      messageLabel: "Conte um pouco mais sobre sua ideia (opcional)",
+      messagePlaceholder: "O que você gostaria de criar?",
+      submitButton: "ENVIAR SOLICITAÇÃO",
+      privacy: "Seus dados serão usados para responder à sua solicitação.",
+      subject: "Solicitação de orçamento — Site Henry Díaz",
+      emailBody: "Nova solicitação de orçamento",
+      name: "Nome",
+      email: "E-mail",
+      contact: "WhatsApp",
+      project: "Projeto",
+      goal: "Objetivo",
+      investment: "Investimento",
+      message: "Mensagem",
+      notice: "Seu aplicativo de e-mail será aberto com a solicitação preenchida. Revise e envie a mensagem para concluir.",
+      sent: "O e-mail foi preparado. Para concluir, envie a mensagem no seu aplicativo de e-mail."
+    },
+    en: {
+      openButton: "REQUEST A QUOTE",
+      closeLabel: "Close",
+      eyebrow: "NEW PROJECTS",
+      title: "Let's create something unique.",
+      intro: "Tell me about your project. I'd like to understand your needs and explore the right digital solution for you.",
+      nameLabel: "Your name",
+      namePlaceholder: "Full name",
+      emailLabel: "Your email",
+      contactLabel: "WhatsApp (optional)",
+      typeLabel: "What type of project do you need?",
+      chooseOption: "Select an option",
+      typeSite: "Business website",
+      typePortfolio: "Professional portfolio",
+      typeLanding: "Landing page",
+      typeAI: "Website with AI or automations",
+      typeOther: "Other project",
+      goalLabel: "What is your main goal?",
+      goalBusiness: "Present my business",
+      goalClients: "Attract new clients",
+      goalPortfolio: "Showcase my work",
+      goalAutomation: "Automate processes",
+      rangeLabel: "Investment range (optional)",
+      rangeUndecided: "Not decided yet",
+      messageLabel: "Tell me more about your idea (optional)",
+      messagePlaceholder: "What would you like to create?",
+      submitButton: "SEND REQUEST",
+      privacy: "Your details will be used to respond to your request.",
+      subject: "Quote request — Henry Díaz website",
+      emailBody: "New quote request",
+      name: "Name",
+      email: "Email",
+      contact: "WhatsApp",
+      project: "Project",
+      goal: "Goal",
+      investment: "Investment",
+      message: "Message",
+      notice: "Your email app will open with the request filled in. Review and send the message to complete your request.",
+      sent: "The email has been prepared. Send it in your email app to complete the request."
+    },
+    es: {
+      openButton: "SOLICITAR PRESUPUESTO",
+      closeLabel: "Cerrar",
+      eyebrow: "NUEVOS PROYECTOS",
+      title: "Creemos algo único.",
+      intro: "Cuéntame sobre tu proyecto. Quiero entender tus necesidades para explorar la solución digital más adecuada.",
+      nameLabel: "Tu nombre",
+      namePlaceholder: "Nombre y apellidos",
+      emailLabel: "Tu correo electrónico",
+      contactLabel: "WhatsApp (opcional)",
+      typeLabel: "¿Qué tipo de proyecto necesitas?",
+      chooseOption: "Selecciona una opción",
+      typeSite: "Web institucional",
+      typePortfolio: "Portafolio profesional",
+      typeLanding: "Landing page",
+      typeAI: "Web con IA o automatizaciones",
+      typeOther: "Otro proyecto",
+      goalLabel: "¿Cuál es tu objetivo principal?",
+      goalBusiness: "Presentar mi negocio",
+      goalClients: "Atraer clientes",
+      goalPortfolio: "Mostrar mis trabajos",
+      goalAutomation: "Automatizar procesos",
+      rangeLabel: "Presupuesto aproximado (opcional)",
+      rangeUndecided: "Aún no lo he definido",
+      messageLabel: "Cuéntame más sobre tu idea (opcional)",
+      messagePlaceholder: "¿Qué te gustaría crear?",
+      submitButton: "ENVIAR SOLICITUD",
+      privacy: "Tus datos se utilizarán para responder a tu solicitud.",
+      subject: "Solicitud de presupuesto — Web Henry Díaz",
+      emailBody: "Nueva solicitud de presupuesto",
+      name: "Nombre",
+      email: "Correo",
+      contact: "WhatsApp",
+      project: "Proyecto",
+      goal: "Objetivo",
+      investment: "Presupuesto",
+      message: "Mensaje",
+      notice: "Se abrirá tu aplicación de correo con la solicitud preparada. Revisa y envía el mensaje para completar la solicitud.",
+      sent: "El correo está preparado. Envíalo desde tu aplicación de correo para completar la solicitud."
+    }
+  };
+
+  let previousFocus = null;
+
+  function currentLang() {
+    const lang = document.documentElement.lang.toLowerCase();
+    if (lang.startsWith("en")) return "en";
+    if (lang.startsWith("es")) return "es";
+    return "pt";
+  }
+
+  function translateModal() {
+    const lang = currentLang();
+    const words = copy[lang];
+
+    modal.querySelectorAll("[data-budget-i18n]").forEach(function (el) {
+      const key = el.getAttribute("data-budget-i18n");
+      if (words[key]) el.textContent = words[key];
+    });
+
+    modal.querySelectorAll("[data-budget-placeholder]").forEach(function (el) {
+      const key = el.getAttribute("data-budget-placeholder");
+      if (words[key]) el.placeholder = words[key];
+    });
+
+    const options = modal.querySelectorAll("option[data-budget-i18n]");
+    options.forEach(function (option) {
+      const key = option.getAttribute("data-budget-i18n");
+      if (words[key]) option.textContent = words[key];
+    });
+  }
+
+  window.abrirOrcamento = function () {
+    previousFocus = document.activeElement;
+    translateModal();
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    modal.querySelector("#budget-name").focus();
+  };
+
+  window.fecharOrcamento = function () {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+
+    if (previousFocus && typeof previousFocus.focus === "function") {
+      previousFocus.focus();
+    }
+  };
+
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) window.fecharOrcamento();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (!modal.classList.contains("is-open")) return;
+    if (event.key === "Escape") window.fecharOrcamento();
+  });
+
+  document.querySelectorAll(".language-switch button").forEach(function (button) {
+    button.addEventListener("click", translateModal);
+  });
+
+  
+    
+
+    
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    const lang = currentLang();
+
+    status.classList.add("is-visible");
+    status.textContent = lang === "en"
+      ? "Sending your request..."
+      : lang === "es"
+        ? "Enviando tu solicitud..."
+        : "Enviando sua solicitação...";
+
+    try {
+      const response = await fetch("/api/budget", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      status.textContent = lang === "en"
+        ? "Request sent successfully. Thank you!"
+        : lang === "es"
+          ? "¡Solicitud enviada correctamente! Gracias."
+          : "Solicitação enviada com sucesso. Obrigado!";
+
+      form.reset();
+
+    } catch (error) {
+      status.textContent = lang === "en"
+        ? "Could not send your request. Please try again later."
+        : lang === "es"
+          ? "No se pudo enviar. Inténtalo de nuevo más tarde."
+          : "Não foi possível enviar. Tente novamente mais tarde.";
+    }
+  });
+
+  translateModal();
+})();
+</script>
+
 </body>
 </html>
+
