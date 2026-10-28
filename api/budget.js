@@ -28,7 +28,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "Henry Díaz Website <onboarding@resend.dev>",
+        from: "Henry Díaz Website <contato@henrydiaz.com.br>",
         to: ["genri.diaz.ti@gmail.com"],
         reply_to: email,
         subject: `Nueva solicitud de presupuesto: ${project}`,
